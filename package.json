@@ -6,6 +6,8 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "unpkg": "dist/index.umd.js",
+  "jsdelivr": "dist/index.umd.js",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -43,8 +45,8 @@
     "browser",
     "node"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "raoanqi",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^22.14.0",
     "husky": "^9.1.7",

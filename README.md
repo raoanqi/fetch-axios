@@ -199,4 +199,4 @@ pnpm example
 
 ## 许可证
 
-ISC
+MIT
