@@ -1,0 +1,58 @@
+{
+  "name": "fetch-axios",
+  "version": "1.0.0",
+  "description": "A fetch-based HTTP request library for both browser and Node.js environments",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "example": "tsx examples/basic.ts",
+    "format": "prettier --config .prettierrc --write \"src/**/*.{ts,tsx}\" \"examples/**/*.{ts,tsx}\"",
+    "lint": "prettier --config .prettierrc --check \"src/**/*.{ts,tsx}\" \"examples/**/*.{ts,tsx}\"",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "prettier --config .prettierrc --write"
+    ],
+    "examples/**/*.{ts,tsx}": [
+      "prettier --config .prettierrc --write"
+    ]
+  },
+  "keywords": [
+    "fetch",
+    "http",
+    "request",
+    "axios",
+    "browser",
+    "node"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
+    "tsup": "^8.4.0",
+    "tsx": "^4.7.2",
+    "typescript": "^5.8.3",
+    "undici": "^7.7.0"
+  }
+}
