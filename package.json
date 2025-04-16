@@ -1,6 +1,6 @@
 {
-  "name": "fetch-axios",
-  "version": "1.0.0",
+  "name": "@xiaoyueqinglan/fxios",
+  "version": "1.1.0",
   "description": "A fetch-based HTTP request library for both browser and Node.js environments",
   "type": "module",
   "main": "dist/index.js",
@@ -27,7 +27,8 @@
     "format": "prettier --config .prettierrc --write \"src/**/*.{ts,tsx}\" \"examples/**/*.{ts,tsx}\"",
     "lint": "prettier --config .prettierrc --check \"src/**/*.{ts,tsx}\" \"examples/**/*.{ts,tsx}\"",
     "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "prepublishOnly": "pnpm build"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
@@ -47,6 +48,14 @@
   ],
   "author": "raoanqi",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raoanqi/fetch-axios.git"
+  },
+  "bugs": {
+    "url": "https://github.com/raoanqi/fetch-axios/issues"
+  },
+  "homepage": "https://github.com/raoanqi/fetch-axios#readme",
   "devDependencies": {
     "@types/node": "^22.14.0",
     "husky": "^9.1.7",

@@ -1,4 +1,4 @@
-# Fetch-Axios
+# @xiaoyueqinglan/fxios
 
 一个基于fetch实现的HTTP请求库，同时支持浏览器和Node.js环境，API风格类似Axios。
 
@@ -16,13 +16,13 @@
 
 ```bash
 # 使用pnpm
-pnpm add fetch-axios
+pnpm add @xiaoyueqinglan/fxios
 
 # 使用npm
-npm install fetch-axios
+npm install @xiaoyueqinglan/fxios
 
 # 使用yarn
-yarn add fetch-axios
+yarn add @xiaoyueqinglan/fxios
 ```
 
 ## 环境要求
@@ -36,7 +36,7 @@ yarn add fetch-axios
 ### 基本使用
 
 ```typescript
-import { get, post } from 'fetch-axios';
+import { get, post } from '@xiaoyueqinglan/fxios';
 
 // GET请求
 get('https://api.example.com/users')
@@ -52,7 +52,7 @@ post('https://api.example.com/users', { name: 'Tom', age: 25 })
 ### 创建自定义实例
 
 ```typescript
-import { create, HttpMethod } from 'fetch-axios';
+import { create, HttpMethod } from '@xiaoyueqinglan/fxios';
 
 const api = create({
   baseURL: 'https://api.example.com',
@@ -73,7 +73,7 @@ api
 ### 使用请求配置
 
 ```typescript
-import { request, HttpMethod, ResponseType } from 'fetch-axios';
+import { request, HttpMethod, ResponseType } from '@xiaoyueqinglan/fxios';
 
 request({
   url: '/users',
@@ -91,7 +91,7 @@ request({
 ### 使用拦截器
 
 ```typescript
-import { create } from 'fetch-axios';
+import { create } from '@xiaoyueqinglan/fxios';
 
 const api = create({
   baseURL: 'https://api.example.com'
@@ -127,7 +127,7 @@ api.request({
 ### 取消请求
 
 ```typescript
-import { request, createCancelToken } from 'fetch-axios';
+import { request, createCancelToken } from '@xiaoyueqinglan/fxios';
 
 const cancelToken = createCancelToken();
 

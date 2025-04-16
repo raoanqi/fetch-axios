@@ -1,5 +1,5 @@
 /**
- * Fetch-Axios 基本使用示例
+ * @xiaoyueqinglan/fxios 基本使用示例
  */
 import { get, post, create, HttpMethod, createCancelToken } from '../src';
 
@@ -44,7 +44,7 @@ async function customInstance() {
   const api = create({
     baseURL: 'https://jsonplaceholder.typicode.com',
     headers: {
-      'X-Custom-Header': 'fetch-axios'
+      'X-Custom-Header': '@xiaoyueqinglan/fxios'
     }
   });
 

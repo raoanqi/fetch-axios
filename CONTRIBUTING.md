@@ -1,6 +1,6 @@
 # 贡献指南
 
-感谢你考虑为 Fetch-Axios 项目做出贡献！这个文档将指导你如何为这个项目贡献代码。
+感谢你考虑为 @xiaoyueqinglan/fxios 项目做出贡献！这个文档将指导你如何为这个项目贡献代码。
 
 ## 开发环境设置
 
@@ -15,7 +15,7 @@
 2. 克隆你 fork 的仓库到本地
 
    ```bash
-   git clone https://github.com/raoanqi/fetch-axios.git
+   git clone https://github.com/YOUR_USERNAME/fetch-axios.git
    cd fetch-axios
    ```
 
