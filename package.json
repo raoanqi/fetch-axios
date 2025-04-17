@@ -1,6 +1,6 @@
 {
   "name": "@xiaoyueqinglan/fxios",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A fetch-based HTTP request library for both browser and Node.js environments",
   "type": "module",
   "main": "dist/index.js",
@@ -20,7 +20,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "NODE_ENV=production tsup",
+    "build:dev": "tsup",
     "dev": "tsup --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "example": "tsx examples/basic.ts",

@@ -5,8 +5,10 @@ export default defineConfig({
   format: ['esm', 'cjs', 'iife'],
   dts: true,
   splitting: false,
-  sourcemap: true,
+  sourcemap: process.env.NODE_ENV !== 'production',
   clean: true,
+  minify: process.env.NODE_ENV === 'production',
+  treeshake: true,
   globalName: 'FetchAxios',
   outExtension({ format }) {
     return {
