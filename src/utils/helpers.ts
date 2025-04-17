@@ -4,6 +4,17 @@ import { RequestOptions } from '../types';
  * 判断是否为浏览器环境
  */
 export const isBrowser = (): boolean => {
+  // 检查构建环境变量
+  if (typeof process !== 'undefined' && process.env && process.env.BROWSER === 'true') {
+    return true;
+  }
+
+  // 检查UMD构建标志
+  if (typeof process !== 'undefined' && process.env && process.env.IS_UMD_BUILD === 'true') {
+    return true;
+  }
+
+  // 传统检测方法
   return typeof window !== 'undefined' && typeof document !== 'undefined';
 };
 

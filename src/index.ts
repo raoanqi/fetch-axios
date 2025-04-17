@@ -3,15 +3,27 @@ import { HttpMethod, RequestOptions, ResponseType, RequestInstance } from './typ
 import { setupNodeFetch } from './adapters/node-adapter';
 import * as helpers from './utils/helpers';
 
-// 尝试设置Node环境适配
-try {
-  // 在顶层执行setupNodeFetch的异步函数
-  // 注意: 在实际生产环境中，可能需要先等待setupNodeFetch完成再进行操作
-  setupNodeFetch().catch(e => {
-    console.warn('设置Node.js环境的fetch适配器失败，但这不会影响浏览器环境：', e);
-  });
-} catch (error) {
-  console.warn('设置Node.js环境的fetch适配器失败，但这不会影响浏览器环境', error);
+// 检查是否是UMD构建或浏览器环境
+const isUmdBuild =
+  typeof process !== 'undefined' && process.env && process.env.IS_UMD_BUILD === 'true';
+const isBrowserEnv = helpers.isBrowser();
+
+// 只在非UMD构建和非浏览器环境中设置Node适配
+if (!isUmdBuild && !isBrowserEnv) {
+  try {
+    // 在顶层执行setupNodeFetch的异步函数
+    setupNodeFetch().catch(e => {
+      // 在生产环境中抑制警告
+      if (process.env.NODE_ENV !== 'production') {
+        console.warn('设置Node.js环境的fetch适配器失败，但这不会影响浏览器环境：', e);
+      }
+    });
+  } catch (error) {
+    // 在生产环境中抑制警告
+    if (process.env.NODE_ENV !== 'production') {
+      console.warn('设置Node.js环境的fetch适配器失败，但这不会影响浏览器环境', error);
+    }
+  }
 }
 
 // 创建默认实例

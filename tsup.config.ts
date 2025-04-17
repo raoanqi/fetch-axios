@@ -47,7 +47,7 @@ export default defineConfig([
     platform: 'browser',
     treeshake: true,
     target: 'es2020',
-    sourcemap: isProd,
+    sourcemap: !isProd,
     define: {
       'process.env.IS_BROWSER': JSON.stringify('true'),
       'process.env.NODE_ENV': JSON.stringify('production')
