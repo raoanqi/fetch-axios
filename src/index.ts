@@ -34,16 +34,8 @@ export const create = (options?: RequestOptions): RequestInstance => {
 // 导出工具函数和类型
 export { helpers, FetchRequest, DEFAULT_OPTIONS, HttpMethod, ResponseType };
 
-// 默认导出
-export default {
-  request,
-  get,
-  post,
-  put,
-  delete: del,
-  patch,
-  create,
-  createCancelToken,
-  HttpMethod,
-  ResponseType
-};
+// 注意：删除了默认导出，现在统一使用命名导出
+// 用户可以通过以下方式导入:
+// import { get, post } from '@xiaoyueqinglan/fxios';
+// 或者导入所有:
+// import * as FetchAxios from '@xiaoyueqinglan/fxios';

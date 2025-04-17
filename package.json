@@ -1,6 +1,6 @@
 {
   "name": "@xiaoyueqinglan/fxios",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A fetch-based HTTP request library for both browser and Node.js environments",
   "type": "module",
   "main": "dist/index.js",

@@ -14,5 +14,12 @@ export default defineConfig({
     return {
       js: format === 'esm' ? '.mjs' : format === 'iife' ? '.umd.js' : '.js'
     };
-  }
+  },
+  platform: 'node',
+  external: ['undici', 'node:*'],
+  esbuildOptions(options) {
+    options.outbase = '';
+  },
+  outDir: 'dist',
+  target: 'es2020'
 });
