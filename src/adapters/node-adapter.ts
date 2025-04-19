@@ -37,10 +37,13 @@ export const setupNodeFetch = async (): Promise<void> => {
           FormData: FormData || globalThis.FormData
         });
       } else {
+        // eslint-disable-next-line no-console
         console.warn('全局fetch API不可用，请使用Node.js v18或更高版本，或手动安装polyfill');
+        // eslint-disable-next-line no-console
         console.warn('对于Node.js v18以下版本，请安装: npm install undici');
       }
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.warn('无法加载fetch polyfill:', e);
     }
   }
